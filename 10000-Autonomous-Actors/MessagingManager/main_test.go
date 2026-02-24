@@ -4,12 +4,13 @@ import (
 	"context"
 	"testing"
 
-	messagingv1 "OlympusGCP-Messaging/40000-Communication-Contracts/430-Protocol-Definitions/000-gen/messaging/v1"
+	messagingv1 "OlympusGCP-Messaging/gen/v1/messaging"
+	"OlympusGCP-Messaging/10000-Autonomous-Actors/10700-Processing-Engines/10710-Reasoning-Inference/inference"
 	"connectrpc.com/connect"
 )
 
 func TestMessagingServer(t *testing.T) {
-	server := &MessagingServer{}
+	server := &inference.MessagingServer{}
 	ctx := context.Background()
 
 	// Test SendMessage

@@ -1,31 +1,29 @@
 package main
 
 import (
-	"context"
+	"fmt"
 	"log/slog"
 	"net/http"
 	"time"
 
-	messagingv1 "OlympusGCP-Messaging/40000-Communication-Contracts/430-Protocol-Definitions/000-gen/messaging/v1"
-	"OlympusGCP-Messaging/40000-Communication-Contracts/430-Protocol-Definitions/000-gen/messaging/v1/messagingv1connect"
+	"OlympusGCP-Messaging/gen/v1/messaging/messagingv1connect"
+	"OlympusGCP-Messaging/10000-Autonomous-Actors/10700-Processing-Engines/10710-Reasoning-Inference/inference"
 
-	"connectrpc.com/connect"
 	"golang.org/x/net/http2"
 	"golang.org/x/net/http2/h2c"
 )
 
-type MessagingServer struct{}
-
-func (s *MessagingServer) SendMessage(ctx context.Context, req *connect.Request[messagingv1.SendMessageRequest]) (*connect.Response[messagingv1.SendMessageResponse], error) {
-	slog.Info("SendMessage", "to", req.Msg.Recipient)
-	return connect.NewResponse(&messagingv1.SendMessageResponse{MessageId: "msg-999"}), nil
-}
-
 func main() {
-	server := &MessagingServer{}
+	server := &inference.MessagingServer{}
 	mux := http.NewServeMux()
 	path, handler := messagingv1connect.NewMessagingServiceHandler(server)
 	mux.Handle(path, handler)
+
+	// Health Check / Pulse
+	mux.HandleFunc("/pulse", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		fmt.Fprintf(w, `{"status":"HEALTHY", "workspace":"OlympusGCP-Messaging", "time":"%s"}`, time.Now().Format(time.RFC3339))
+	})
 
 	port := "8090" // From genesis.json (MessagingManager replaces MeshHub)
 	slog.Info("MessagingManager starting", "port", port)

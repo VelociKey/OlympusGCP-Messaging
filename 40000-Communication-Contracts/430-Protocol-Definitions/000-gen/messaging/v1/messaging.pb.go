@@ -129,7 +129,7 @@ const file_messaging_v1_messaging_proto_rawDesc = "" +
 	"\n" +
 	"message_id\x18\x01 \x01(\tR\tmessageId2f\n" +
 	"\x10MessagingService\x12R\n" +
-	"\vSendMessage\x12 .messaging.v1.SendMessageRequest\x1a!.messaging.v1.SendMessageResponseBnZlOlympusGCP-Messaging/40000-Communication-Contracts/430-Protocol-Definitions/000-gen/messaging/v1;messagingv1b\x06proto3"
+	messagingv1 "OlympusGCP-Messaging/gen/v1/messaging"
 
 var (
 	file_messaging_v1_messaging_proto_rawDescOnce sync.Once

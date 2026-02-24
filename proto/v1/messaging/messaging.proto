@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package messaging.v1;
 
-option go_package = "OlympusGCP-Messaging/40000-Communication-Contracts/430-Protocol-Definitions/000-gen/messaging/v1;messagingv1";
+option go_package = "OlympusGCP-Messaging/gen/v1/messaging;messagingv1";
 
 service MessagingService {
   rpc SendMessage (SendMessageRequest) returns (SendMessageResponse);
