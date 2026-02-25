@@ -7,11 +7,12 @@
 package messagingv1
 
 import (
-	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
-	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
+
+	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
+	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 )
 
 const (
@@ -129,7 +130,7 @@ const file_messaging_v1_messaging_proto_rawDesc = "" +
 	"\n" +
 	"message_id\x18\x01 \x01(\tR\tmessageId2f\n" +
 	"\x10MessagingService\x12R\n" +
-	messagingv1 "OlympusGCP-Messaging/gen/v1/messaging"
+	"\vSendMessage\x12 .messaging.v1.SendMessageRequest\x1a!.messaging.v1.SendMessageResponseB3Z1OlympusGCP-Messaging/gen/v1/messaging;messagingv1b\x06proto3"
 
 var (
 	file_messaging_v1_messaging_proto_rawDescOnce sync.Once
