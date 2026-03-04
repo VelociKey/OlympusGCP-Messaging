@@ -4,7 +4,7 @@ import (
 	"context"
 	"log/slog"
 
-	messagingv1 "OlympusGCP-Messaging/gen/v1/messaging"
+	messagingv1 "olympus.fleet/00SDLC/OlympusGCP-Messaging/gen/v1/messaging"
 	"connectrpc.com/connect"
 )
 
