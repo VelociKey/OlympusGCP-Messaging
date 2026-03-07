@@ -5,7 +5,7 @@
 package messagingv1connect
 
 import (
-	messaging "olympus.fleet/00SDLC/OlympusGCP-Messaging/gen/v1/messaging"
+	messaging "olympus.fleet/00SDLC/OlympusGCP-Messaging/40000-Communication-Contracts/40400-Protocol-Synthetics/connect-rpc/gen/v1/messaging"
 	connect "connectrpc.com/connect"
 	context "context"
 	errors "errors"

@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	messagingv1 "olympus.fleet/00SDLC/OlympusGCP-Messaging/gen/v1/messaging"
+	messagingv1 "olympus.fleet/00SDLC/OlympusGCP-Messaging/40000-Communication-Contracts/40400-Protocol-Synthetics/connect-rpc/gen/v1/messaging"
 	"olympus.fleet/00SDLC/OlympusGCP-Messaging/10000-Autonomous-Actors/10700-Processing-Engines/10710-Reasoning-Inference/inference"
 	"connectrpc.com/connect"
 )
